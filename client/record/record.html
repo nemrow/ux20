@@ -1,0 +1,20 @@
+<template name="record">
+  <div class="row center">
+    <div class="col-sm-12">
+      <h1>{{subCategory.name}}</h1>
+      <p>Please record your request below.</p>
+    </div>
+  </div>
+  <div class="record-button-container">
+    <button class="recording-button {{#if recording}}stop{{/if}}" id="record"></button>
+  </div>
+
+  {{#if recording}}
+    <div class="row">
+      <div class="col-sm-12 recoding-animation-container">
+        {{> recordingAnimation}}
+        <span>recording...</span>
+      </div>
+    </div>
+  {{/if}}
+</template>

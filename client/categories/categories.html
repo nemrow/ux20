@@ -1,0 +1,13 @@
+<template name='categories'>
+  <h1 class="center">Select a Category</h1>
+  <br>
+  <div class="row">
+    <div class="col-sm-12">
+      {{#each categories}}
+        {{#linkTo route="subCategories" data=this class="btn btn-primary btn-lg btn-block"}}
+          {{name}}
+        {{/linkTo}}
+      {{/each}}
+    </div>
+  </div>
+</template>

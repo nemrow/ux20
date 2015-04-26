@@ -1,0 +1,41 @@
+.recording-button {
+  background: transparent url('images/audio-icons.png') no-repeat;
+  width: 45px;
+  height: 44px;
+  border: none;
+  outline: none;
+  background-position-x: -342px;
+  background-position-y: -31px;
+  display: inline;
+}
+
+.recording-button.play {
+  background-position-x: -15px;
+}
+
+.recording-button.record {
+  background-position-x: -342px;
+}
+
+.recording-button.stop {
+  background-position-x: -123px;
+}
+
+.recording-button.redo {
+  background-position-x: -288px;
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.record-button-container {
+  position: relative;
+  margin: 20px auto 60px;
+  text-align: center;
+}
+
+.recoding-animation-container {
+  text-align: center;
+}

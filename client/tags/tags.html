@@ -1,0 +1,8 @@
+<template name="tags">
+  <h3>Select All Tags That Apply</h3>
+  <ul class="list-group tags-list">
+    {{#each placeTags}}
+      <li class="list-group-item {{#if active}}tag-active{{/if}}" data-tag={{tag}}>{{name}}</li>
+    {{/each}}
+  </ul>
+</template>
