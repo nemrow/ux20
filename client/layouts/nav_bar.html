@@ -20,7 +20,7 @@
         <ul class="nav navbar-nav navbar-right">
           {{#if currentUser}}
             <li>{{#linkTo route='categories'}}New Search{{/linkTo}}</li>
-            <li><a href="#">My Searches</a></li>
+            <li>{{#linkTo route='mySearches'}}My Searches{{/linkTo}}</li>
             <li>{{#linkTo route="logout"}}Sign Out{{/linkTo}}</li>
           {{else}}
             <li><a href="#">Sign In</a></li>

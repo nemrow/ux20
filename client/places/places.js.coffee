@@ -4,6 +4,7 @@
 @Places = {
   run: ->
     Session.set("placesComplete", false)
+    Session.set("notEnoughPlacesFound", false)
     placesArray = []
     searchRadius = 200
     placesCount = 0
@@ -43,10 +44,11 @@
     Places.placesService().nearbySearch(Places.requestData(), Places.nearbySearchHandler)
 
   nearbySearchHandler: (results, status) ->
+    # if searchRadius > 500 && results.length < 5
     if searchRadius > 4828 && results.length < 5
-      # not enough spot around you
-    # else if results.length < 12
-    else if results.length < 6
+      Session.set("notEnoughPlacesFound", true)
+    else if results.length < 12
+    # else if results.length < 6
       # increasing radius and running again
       setTimeout =>
         searchRadius += 200

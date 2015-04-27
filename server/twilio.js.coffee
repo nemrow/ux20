@@ -14,6 +14,5 @@ Meteor.startup ->
   Meteor.methods
     twilioInitPhoneCalls: (searchId) ->
       for place in Searches.findOne(searchId).places
-        # placeCall "17078496085", {searchId: searchId, placeId: place.place_id}
-        placeCall "17078496085", "searchId=#{searchId}&placeId=#{place.place_id}"
-        # placeCall place.phone_number, "searchId=#{searchId}&placeId=#{place.place_id}"
+        # placeCall "17078496085", "searchId=#{searchId}&placeId=#{place.place_id}"
+        placeCall place.formatted_phone_number, "searchId=#{searchId}&placeId=#{place.place_id}"

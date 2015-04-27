@@ -1,0 +1,24 @@
+.call-btn {
+  color: #fff;
+  font-size: 30px;
+}
+
+.call-btn span {
+  margin: 10px 0;
+}
+
+.result-container h4 {
+  margin: 0px;
+  color: #c7ddef;
+}
+
+.result-container small {
+  color: #c7ddef;
+}
+
+.result-container p {
+  color: #fff;
+  font-weight: bold;
+  margin: 0px;
+  font-size: 20px;
+}

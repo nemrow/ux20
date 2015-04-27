@@ -1,0 +1,15 @@
+<template name="mySearches">
+  <h1 class='center'>Recent Searches</h1>
+  <br>
+  <ul class="list-group">
+    {{#each searches}}
+      {{#linkTo route='search' data=params}}
+        <li class="list-group-item">
+          <span class="badge">{{responseCount}}</span>
+          {{subCategoryName}}
+        </li>
+      {{/linkTo}}
+      <br>
+    {{/each}}
+  </ul>
+</template>

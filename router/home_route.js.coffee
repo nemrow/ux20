@@ -57,6 +57,16 @@ Router.route "review",
     else
       Router.go("login")
 
+Router.route "mySearches",
+  name: "mySearches"
+  path: "/mySearches"
+  action: ->
+    if Meteor.user()
+      @layout('mainLayout')
+      @render('mySearches')
+    else
+      Router.go("login")
+
 Router.route "search",
   name: "search"
   path: "/search/:searchId"

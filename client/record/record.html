@@ -1,20 +1,46 @@
 <template name="record">
-  <div class="row center">
-    <div class="col-sm-12">
-      <h1>{{subCategory.name}}</h1>
-      <p>Please record your request below.</p>
-    </div>
-  </div>
-  <div class="record-button-container">
-    <button class="recording-button {{#if recording}}stop{{/if}}" id="record"></button>
-  </div>
-
-  {{#if recording}}
-    <div class="row">
+  {{#if searchingPlaces}}
+    <div class="row center">
       <div class="col-sm-12 recoding-animation-container">
         {{> recordingAnimation}}
-        <span>recording...</span>
+        <span>figuring out places to call...</span>
       </div>
     </div>
+  {{else}}
+    {{#if uploadingRecording}}
+      <div class="row">
+        <div class="col-sm-12 recoding-animation-container">
+          {{> recordingAnimation}}
+          <span>optimizing your recording...</span>
+        </div>
+      </div>
+    {{else}}
+      <div class="row center">
+        <div class="col-sm-12">
+          <h1>{{subCategory.name}}</h1>
+          <p>Please record your request below.</p>
+        </div>
+      </div>
+      <div class="record-button-container">
+        <button class="recording-button {{#if recording}}stop{{/if}}" id="record"></button>
+      </div>
+      {{#if recording}}
+        <div class="row">
+          <div class="col-sm-12 recoding-animation-container">
+            {{> recordingAnimation}}
+            <span>recording...</span>
+          </div>
+        </div>
+      {{/if}}
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="well">
+            <h5>Places we will call for you.</h5>
+            <small>{{placesToCall}}</small>
+          </div>
+        </div>
+      </div>
+    {{/if}}
   {{/if}}
+
 </template>

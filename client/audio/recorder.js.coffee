@@ -11,6 +11,7 @@ class @Recorder
 
   stopRecording: (stopRecordingCallback) ->
     @stopRecordingCallback = stopRecordingCallback
+    Session.set("uploadRecordingInProgress", true)
     @recordRTC.stopRecording =>
       @uploadToS3()
 
@@ -24,7 +25,8 @@ class @Recorder
     recording = Recordings.insert
       userId: Meteor.userId()
       recordingUrl: downloadUrl
-    Session.set("latestRecording", recording)
+    Session.set("uploadRecordingInProgress", false)
     Session.set("recordingInProgress", false)
+    Session.set("latestRecording", recording)
     @stopRecordingCallback()
 
