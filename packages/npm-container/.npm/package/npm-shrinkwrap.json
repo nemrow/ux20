@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "telapi": {
+      "version": "https://github.com/TelAPI/telapi-nodejs/archive/7cbebb00df74135656d29e15ee33fa7ae9d0ff40.tar.gz",
+      "dependencies": {
+        "string": {
+          "version": "3.1.1"
+        }
+      }
+    }
+  }
+}

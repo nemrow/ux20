@@ -4,4 +4,11 @@ requireLogin = ->
   else
     Router.go('login')
 
-Router.onBeforeAction requireLogin, { except: ['login'] }
+Router.onBeforeAction requireLogin, { except: [
+    'login'
+    'twilioStatusCallback'
+    'twilioInitCall'
+    'twilioTranscribe'
+    'twilioThankYou'
+  ]
+}

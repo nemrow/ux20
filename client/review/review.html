@@ -18,7 +18,10 @@
             <button type="button" class="btn btn-primary btn-lg btn-block" id="place-calls">Place Calls</button>
           </div>
         {{else}}
-          <p>Please wait while we figure out who to call...</p>
+          <div class="col-sm-12 recoding-animation-container">
+            {{> recordingAnimation}}
+            <span>figuring out places to call...</span>
+          </div>
         {{/if}}
       </div>
     </div>

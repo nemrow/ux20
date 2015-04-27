@@ -37,6 +37,7 @@ Router.route "record",
   action: ->
     if Meteor.user()
       Session.set("placeTags", getTags(@params.subCategory))
+      Session.set("subCategory", @params.subCategory)
       @layout('mainLayout')
       @render('record')
     else
@@ -60,7 +61,9 @@ Router.route "search",
   name: "search"
   path: "/search/:searchId"
   data: ->
-    @params
+    templateData = {
+      search: Searches.findOne(@params.searchId)
+    }
   action: ->
     if Meteor.user()
       @layout('mainLayout')

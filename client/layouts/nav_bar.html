@@ -19,7 +19,7 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           {{#if currentUser}}
-            <li><a href="#">New Search</a></li>
+            <li>{{#linkTo route='categories'}}New Search{{/linkTo}}</li>
             <li><a href="#">My Searches</a></li>
             <li>{{#linkTo route="logout"}}Sign Out{{/linkTo}}</li>
           {{else}}

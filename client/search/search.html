@@ -1,0 +1,20 @@
+<template name="search">
+  <div class="row">
+    <div class="col-sm-12">
+      {{#each search.transcribedResults}}
+        <div class="list-group">
+          <a href="#" class="list-group-item active">
+            <h4 class="list-group-item-heading">{{name}}</h4>
+            <p class="list-group-item-text">"{{transcription}}"</p>
+          </a>
+        </div>
+      {{/each}}
+    </div>
+    {{#if search.waitingOnCalls}}
+      <div class="col-sm-12 recoding-animation-container">
+        {{> recordingAnimation}}
+        <span>still calling...</span>
+      </div>
+    {{/if}}
+  </div>
+</template>
